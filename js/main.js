@@ -91,11 +91,16 @@ for (let i = 0; i < 10; i++) {
     let randomY = Math.random() * window_height;
     let radius = Math.floor(Math.random() * 100) + 20;
     let speed = Math.floor(Math.random() * 10) + 2;
+
+    let red = Math.floor(Math.random() * 256);
+    let green = Math.floor(Math.random() * 256);
+    let blue = Math.floor(Math.random() * 256);
+
     let circle = new Circle(
         randomX,
         randomY,
         radius,
-        "#1c67fc",
+        `rgb(${red}, ${green}, ${blue})`,
         `${i + 1}`,
         speed
     );
