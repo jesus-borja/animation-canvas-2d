@@ -30,6 +30,11 @@ class Circle {
             "yellow",
             "orange",
             "white",
+            "cyan",
+            "magenta",
+            "brown",
+            "violet",
+            "teal",
         ];
     }
 
