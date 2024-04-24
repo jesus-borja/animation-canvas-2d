@@ -66,6 +66,7 @@ class Circle {
         // hay que cambiar la dirección hacia la izquierda
         if (this.posX + this.radius >= window_width) {
             this.dx *= -1;
+            this.posX = window_width - this.radius;
             this.changeColor();
         }
 
@@ -73,16 +74,19 @@ class Circle {
         // cambiamos la dirección hacia la derecha
         if (this.posX - this.radius <= 0) {
             this.dx *= -1;
+            this.posX = 0 + this.radius;
             this.changeColor();
         }
 
         if (this.posY + this.radius >= window_height) {
             this.dy *= -1;
+            this.posY = window_height - this.radius;
             this.changeColor();
         }
 
         if (this.posY - this.radius <= 0) {
             this.dy *= -1;
+            this.posY = 0 + this.radius;
             this.changeColor();
         }
         this.posX += this.dx;
@@ -92,9 +96,9 @@ class Circle {
 
 let circles = [];
 for (let i = 0; i < 10; i++) {
-    let randomX = Math.random() * window_width;
-    let randomY = Math.random() * window_height;
     let radius = Math.floor(Math.random() * 100) + 20;
+    let randomX = Math.floor((Math.random() * (window_width  - radius*2) + radius));
+    let randomY = Math.floor((Math.random() * (window_height - radius*2) + radius));
     let speed = Math.floor(Math.random() * 10) + 2;
 
     let red = Math.floor(Math.random() * 256);
